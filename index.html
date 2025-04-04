@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shame On YOU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Shame On YOU</h1>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="means">Mean Values (comma, space, or tab separated):</label>
+            <textarea id="means" rows="3" placeholder="e.g. 10, 20, 30, 40"></textarea>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="sd-lower">Standard Deviation Lower Limit:</label>
+                <input type="number" id="sd-lower" value="1" step="0.1">
+            </div>
+            
+            <div class="form-group">
+                <label for="sd-upper">Standard Deviation Upper Limit:</label>
+                <input type="number" id="sd-upper" value="5" step="0.1">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="replicates">Number of Replicates (Y):</label>
+            <input type="number" id="replicates" value="5" min="1">
+        </div>
+        
+        <div class="button-group">
+            <button id="generate-btn">Generate Data</button>
+        </div>
+        <button id="clear-btn">Clear Results</button>
+        <button id="download-btn" disabled>Download CSV</button>
+        
+        <div class="results-container">
+            <h2>Results:</h2>
+            <div id="stats-summary"></div>
+            <div id="results"></div>
+        </div>
+    </div>
+    
+    <!-- Custom Password Modal -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>!!Not So Fast!!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Enter the password to continue:</p>
+                <input type="password" id="password-input" maxlength="8">
+                <div class="modal-buttons">
+                    <button id="password-submit">Submit</button>
+                    <button id="password-cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
+    <!-- Click Counter -->
+    <div id="clickCounter" style="position: fixed; bottom: 20px; left: 20px; background: rgba(255,255,255,0.8); padding: 5px 10px; border-radius: 5px;">
+      Total clicks: <span id="count">Loading...</span>
+    </div>
+    
+</body>
+</html>
